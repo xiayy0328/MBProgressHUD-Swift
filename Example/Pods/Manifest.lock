@@ -1,0 +1,16 @@
+PODS:
+  - MBProgressHUD-Swift (0.1.0)
+
+DEPENDENCIES:
+  - MBProgressHUD-Swift (from `../`)
+
+EXTERNAL SOURCES:
+  MBProgressHUD-Swift:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  MBProgressHUD-Swift: 60de01c9521ba334c2db0f2104f4dbcee6d79cc3
+
+PODFILE CHECKSUM: 8b3dbde43025b9d3968e152a74014de15a36e946
+
+COCOAPODS: 1.10.1
