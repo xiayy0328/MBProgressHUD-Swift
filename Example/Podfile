@@ -1,0 +1,13 @@
+use_frameworks!
+
+platform :ios, '9.0'
+
+target 'MBProgressHUD-Swift_Example' do
+  pod 'MBProgressHUD-Swift', :path => '../'
+
+  target 'MBProgressHUD-Swift_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
