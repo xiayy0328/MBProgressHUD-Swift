@@ -27,7 +27,7 @@ TODO: Add long description of the pod here.
   s.author           = { 'xiayy0328' => 'xyy_ios@163.com' }
   s.source           = { :git => 'https://github.com/xiayy0328/MBProgressHUD-Swift.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
-
+  s.swift_version = '5.0'
   s.ios.deployment_target = '12.0'
 
   s.source_files = 'MBProgressHUD-Swift/Classes/**/*'
