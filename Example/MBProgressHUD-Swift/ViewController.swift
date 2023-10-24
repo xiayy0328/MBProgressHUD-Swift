@@ -147,7 +147,7 @@ class ViewController: UITableViewController {
         // Set the custom view mode
         hud.mode = .customView
         // Set a checkmark
-        hud.customView = UIImageView(image: #imageLiteral(resourceName: "Checkmark"))
+        hud.customView = UIImageView(image: #imageLiteral(resourceName: "Checkmark1"))
         hud.isSquare = true
         hud.label?.text = NSLocalizedString("Done", comment: "hud done title")
         hud.hide(animated: true, afterDelay: 3.0)
@@ -244,8 +244,7 @@ class ViewController: UITableViewController {
         let hud = MBProgressHUD.show(addedToView: (self.navigationController?.view)!, animated: true)
         hud.contentColor = UIColor.white
         hud.bezelView?.layer.cornerRadius = 10
-            //UIColor(red: 0, green: 0.6, blue: 0.7, alpha: 1)
-        hud.bezelView?.backgroundColor = UIColor.black.withAlphaComponent(0.8)
+        hud.bezelView?.backgroundColor = UIColor(red: 0, green: 0.6, blue: 0.7, alpha: 1)
         // Set the label text.
         hud.label?.text = NSLocalizedString("Loading...", comment: "hud loading title")
         
