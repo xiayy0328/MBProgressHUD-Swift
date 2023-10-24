@@ -132,7 +132,7 @@ open class MBProgressHUD: UIView {
         }
         didSet {
             if oldValue !== progressObjectDisplayLink {
-                progressObjectDisplayLink?.add(to: RunLoop.main, forMode: RunLoopMode.defaultRunLoopMode)
+                progressObjectDisplayLink?.add(to: .main, forMode: .default)
             }
         }
     }
@@ -203,7 +203,7 @@ open class MBProgressHUD: UIView {
         isFinished = false
         if ( graceTime > 0.0) {
             let timer = Timer(timeInterval: graceTime, target: self, selector: #selector(handleGraceTimer(_:)), userInfo: nil, repeats: false)
-            RunLoop.current.add(timer, forMode: RunLoopMode.commonModes)
+            RunLoop.current.add(timer, forMode: .common)
             graceTimer = timer
         } else {
             showUsingAnimation(animated)
@@ -219,7 +219,7 @@ open class MBProgressHUD: UIView {
             let interval = Date().timeIntervalSince(showStarted!)
             if(interval < minShowTime) {
                 let timer = Timer(timeInterval: (minShowTime - interval), target: self, selector: #selector(handleMinShowTimer(_:)), userInfo: nil, repeats: false)
-                RunLoop.current.add(timer, forMode: RunLoopMode.commonModes)
+                RunLoop.current.add(timer, forMode: .common)
                 minShowTimer = timer
             }
         } else {
@@ -229,7 +229,7 @@ open class MBProgressHUD: UIView {
     
     public func hide(animated: Bool, afterDelay delay: TimeInterval) {
         let timer = Timer(timeInterval: delay, target: self, selector: #selector(handleHideTimer(_:)), userInfo: animated, repeats: false)
-        RunLoop.current.add(timer, forMode: RunLoopMode.commonModes)
+        RunLoop.current.add(timer, forMode: .common)
         hideDelayTimer = timer
     }
     
@@ -395,7 +395,7 @@ open class MBProgressHUD: UIView {
             if indicator as? UIActivityIndicatorView == nil {
                 // Update to indeterminate mode
                 indicator?.removeFromSuperview()
-                let activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .whiteLarge)
+                let activityIndicator = UIActivityIndicatorView(style: .whiteLarge)
                 activityIndicator.startAnimating()
                 indicator = activityIndicator
                 bezelView?.addSubview(activityIndicator)
@@ -612,14 +612,14 @@ open class MBProgressHUD: UIView {
     func registerForNotifications() {
         #if !os(tvOS)
             let nc = NotificationCenter.default
-            nc.addObserver(self, selector: #selector(statusBarOrientationDidChange(_:)), name: NSNotification.Name.UIApplicationDidChangeStatusBarOrientation, object: nil)
+            nc.addObserver(self, selector: #selector(statusBarOrientationDidChange(_:)), name: UIApplication.didChangeStatusBarOrientationNotification, object: nil)
         #endif
     }
     
     func unregisterFormNotifications() {
         #if !os(tvOS)
             let nc = NotificationCenter.default
-            nc.removeObserver(self, name: NSNotification.Name.UIApplicationDidChangeStatusBarOrientation, object: nil)
+            nc.removeObserver(self, name: UIApplication.didChangeStatusBarOrientationNotification, object: nil)
         #endif
     }
     
