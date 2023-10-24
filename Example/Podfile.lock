@@ -1,5 +1,5 @@
 PODS:
-  - MBProgressHUD-Swift (0.1.1)
+  - MBProgressHUD-Swift (1.0.0)
 
 DEPENDENCIES:
   - MBProgressHUD-Swift (from `../`)
@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  MBProgressHUD-Swift: 80da3743eb2db49b736e095abf238497574f5ea3
+  MBProgressHUD-Swift: 903598b2ab073ef7cd2790ad5b5ffb287727a346
 
 PODFILE CHECKSUM: 5519462a415af2cfb3652f899afb34dac877565e
 
